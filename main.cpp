@@ -11,7 +11,7 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include <chrono>
-
+#include <algorithm>
 
 
 std::chrono::duration<double> timeSpent;
@@ -81,12 +81,6 @@ int main()
             }
             if (pid == 0)
             {
-                //std::cout << args[0]<<"_";
-                for (int i = 0; i < (int)words.size(); i++)
-                {
-                    std::cout << args[i] <<"_";
-                }
-                std::cout <<  "." <<std::endl;
                 execvp(words[0].c_str(), args.data());
             }
             else
