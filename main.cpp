@@ -99,8 +99,6 @@ void history(std::string temp)
 
 int main()
 {
-    
-    
     while (running)
     {
         std::string line;
@@ -115,8 +113,7 @@ int main()
         {
             running = false;
             std::cout << "Exiting Program\n";
-            exit(EXIT_FAILURE);
-            break;
+            return 0;
         }
         else if (!line.compare("ptime"))
         {
